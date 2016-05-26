@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jimador/hr-portal.svg?branch=master)](https://travis-ci.org/jimador/hr-portal)
+
 # HR Portal
 
 This project is for a proof-of-concept HR Portal. It will serve to assist in the automation of onboarding
