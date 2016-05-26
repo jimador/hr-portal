@@ -1,0 +1,17 @@
+version: '2'
+services:
+  hr-portal:
+    container_name: "hrportal"
+    build: .
+    ports:
+      - "8080:8080"
+    external_links:
+      - hrportal-mongodb:mongodb
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017
+      - SPRING_DATA_MONGODB_DATABASE=hrportal
+  hrportal-mongodb:
+    extends:
+      file: mongodb.yml
+      service: hrportal-mongodb

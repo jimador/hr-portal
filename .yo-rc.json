@@ -1,0 +1,25 @@
+{
+  "generator-jhipster": {
+    "baseName": "hrportal",
+    "packageName": "com.hrportal",
+    "packageFolder": "com/hrportal",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "534fe2cf38d35dd883c11f7b6a63fc6c0de9ea46",
+    "testFrameworks": [
+      "cucumber",
+      "protractor"
+    ]
+  }
+}

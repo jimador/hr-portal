@@ -1,0 +1,206 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myApplicantLabel">Create or edit a Applicant</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="applicant.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_title">Title</label>
+            <select class="form-control" name="title" ng-model="applicant.title" id="field_title">
+                <option value=""></option>
+                <option value="Dr">Dr</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="applicant.firstName"
+                    ng-maxlength="50" />
+            <div ng-show="editForm.firstName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.firstName.$error.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_middleName">Middle Name</label>
+            <input type="text" class="form-control" name="middleName" id="field_middleName"
+                   ng-model="applicant.middleName"
+                   ng-maxlength="50" />
+            <div ng-show="editForm.middleName.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.middleName.$error.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="applicant.lastName"
+                    ng-maxlength="50" />
+            <div ng-show="editForm.lastName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastName.$error.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_suffix">Suffix</label>
+            <select class="form-control" name="suffix" ng-model="applicant.suffix" id="field_suffix">
+                <option value="Jr">Jr</option>
+                <option value="Sr">Sr</option>
+            </select>
+        </div>
+        <div class="form-group"><h3>Contact Info: </h3></div>
+        <div class="form-group">
+            <label class="control-label" for="field_street">Street</label>
+            <input type="text" class="form-control" name="street" id="field_street"
+                   ng-model="applicant.contactInfo.address.street"
+                   ng-maxlength="50" />
+            <div ng-show="editForm.street.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.street.$error.maxlength" translate-value-max="90">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                   ng-model="applicant.contactInfo.address.city"
+                   ng-maxlength="50" />
+            <div ng-show="editForm.city.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.city.$error.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_state">State</label>
+            <input type="text" class="form-control" name="state" id="field_state"
+                   ng-model="applicant.contactInfo.address.state"
+                   ng-maxlength="50" />
+            <div ng-show="editForm.street.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.state.$error.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_zip">Zip Code</label>
+            <input type="text" class="form-control" name="county" id="field_zip"
+                   ng-model="applicant.contactInfo.address.zip"
+                   ng-maxlength="50" />
+            <div ng-show="editForm.zip.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.zip.$error.maxlength" translate-value-max="5">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_county">County</label>
+            <input type="text" class="form-control" name="county" id="field_county"
+                   ng-model="applicant.contactInfo.address.county"
+                   ng-maxlength="50" />
+            <div ng-show="editForm.county.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.county.$error.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                   ng-model="applicant.contactInfo.email.email"
+                   required ng-pattern="/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/" />
+            <div ng-show="editForm.email.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.email.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.email.$error.pattern" translate-value-pattern="[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+                    This field should contain a valid email address, e.g. fake.email@example.com!
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_phone_number">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber" id="field_phone_number"
+                   ng-model="applicant.contactInfo.phoneNumber.phoneNumber"
+                   ng-maxlength="50" />
+            <div ng-show="editForm.phoneNumber.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.phoneNumber.$error.maxlength" translate-value-max="10">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_offerDate">Offer Date</label>
+            <input id="field_offerDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="applicant.offerDate" is-open="datePickerForOfferDate.status.opened"
+            required/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForOfferDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+            <div ng-show="editForm.offerDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.offerDate.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.offerDate.$error.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_position">Position</label>
+            <select class="form-control" name="position"
+                    ng-options="position as position.positionName for position in positions track by position.positionName"
+                    ng-model="applicant.position" id="field_position"></select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contract">Contract</label>
+            <select class="form-control" name="contract"
+                    ng-options="contract as contract.contractName for contract in contracts track by contract.contractName"
+                    ng-model="applicant.contract" id="field_contract"></select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_project">Project</label>
+            <select class="form-control" name="project"
+                    ng-options="project as project.projectName for project in projects track by project.projectName"
+                    ng-model="applicant.project" id="field_project"></select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_manager">Manager</label>
+            <select class="form-control" name="manager"
+                    ng-options="manager as manager.firstName for manager in managers track by manager.firstName"
+                    ng-model="applicant.manager" id="field_manager"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

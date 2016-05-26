@@ -1,0 +1,9 @@
+version: '2'
+services:
+    hrportal-mongodb:
+        container_name: hrportal-mongodb
+        image: mongo:3.2.3
+        volumes:
+            - ./data/:/data/db/
+        ports:
+            - 27017:27017

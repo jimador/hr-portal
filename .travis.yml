@@ -1,0 +1,18 @@
+os:
+  - linux
+services:
+  - docker
+language: node_js
+node_js:
+  - "4.2.1"
+jdk:
+  - oraclejdk8
+before_install:
+  - npm install -g bower
+  - npm install -g grunt-cli
+install:
+  - npm install
+  - bower install
+script:
+  - mvn test
+  - grunt test

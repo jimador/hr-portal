@@ -1,0 +1,9 @@
+<mongoChangeLog>
+    <changeSet changeId="ChangeSet-1" author="jhipster">
+        <script>
+            db.jhi_authority.insert({"_id" : "ROLE_ADMIN"});
+            db.jhi_authority.insert({"_id" : "ROLE_USER"});
+            db.jhi_authority.insert({"_id" : "ROLE_SYS_ADMIN"})
+        </script>
+    </changeSet>
+</mongoChangeLog>

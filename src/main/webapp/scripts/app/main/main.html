@@ -1,0 +1,33 @@
+<div ng-cloak>
+    <div class="row">
+        <div ng-switch="isAuthenticated()">
+            <div class="alert alert-success" ng-switch-when="true">
+                You are logged in as user "{{account.login}}".
+            </div>
+
+            <div class="alert alert-warning" ng-switch-when="false">
+                If you want to <a class="alert-link" href="#/login">sign in</a>, you can try the default accounts:
+                <br/>- Sys Admin (login="sysadmin" and password="admin")
+                <br/>- Administrator (login="admin" and password="admin")
+                <br/>- User (login="user" and password="user").
+            </div>
+
+            <div class="alert alert-warning" ng-switch-when="false">
+                You don't have an account yet? <a class="alert-link" href="#/register">Register a new account</a>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <h1>Welcome to the New Hire Portal</h1>
+
+            <p>
+                If you have any questions contact:
+            </p>
+
+            <ul>
+                <li><a href="mailto:fakeemail@fake.fa" target="_blank">Me</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>

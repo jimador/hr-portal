@@ -1,0 +1,7 @@
+hrportal-dev-mongodb:
+  container_name: hrportal-dev-mongodb
+  image: mongo:3.0.7
+  # volumes:
+  #   - ~/volumes/jhipster/hrportal/dev-mongodb/:/data/db/
+  ports:
+    - "27017:27017"
