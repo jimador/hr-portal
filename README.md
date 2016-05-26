@@ -57,7 +57,7 @@ To setup this project in Jenkins, use the following configuration:
 
 * Project name: `hrportal`
 * Source Code Management
-    * Git Repository: 
+    * Git Repository: https://github.com/jimador/hr-portal.git
     * Branches to build: `*/master`
     * Additional Behaviours: `Wipe out repository & force clone`
 * Build Triggers
